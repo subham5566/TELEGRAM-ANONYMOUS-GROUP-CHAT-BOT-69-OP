@@ -2,6 +2,7 @@
 Anonymous group chat inside Telegram bot 
 
 ## How to install
+Download the bot or clone the repo and go to the main directory
 ```
 python -m pip install python-telegram-bot --upgrade
 ```
