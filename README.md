@@ -1,5 +1,5 @@
 # Makebot
-Anonymous group chat inside Telegram bot 
+Anonymous group chat inside a Telegram bot 
 
 ## How to install
 Download the bot or clone the repo and go to the main directory
