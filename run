@@ -1,0 +1,11 @@
+#!/bin/bash
+BASEDIR=$(dirname "$0");
+cd $BASEDIR;
+if [ ! $LOG_DIR ]; then
+	LOG_DIR=$BASEDIR
+fi;
+
+python3 makebot.py 2>> $LOG_DIR/Makebot.run.log >> $LOG_DIR/Makebot.run.log &
+
+PID=$!;
+echo "$PID";
