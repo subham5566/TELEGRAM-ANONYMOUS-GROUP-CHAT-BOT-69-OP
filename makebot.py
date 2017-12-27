@@ -28,6 +28,8 @@ with open("BUILD","r") as f:
     build=f.read() #Get build number from BUILD file
 version = "0.3_"+str(build) #Version is version+build
 author = "Make" #Author
+help_text="Untergrund Chat @TheVillageChats Chat-Netzwerks.\n\nHier kannst du Anonym mit anderen schreiben.\n\n/help - Help\n/license - Shows the license\n/info - Information about your identity and the server\n/renew - Renews your identity\n/stop - Stops the bot"
+license_text="The Bot is hosted by @GeloMyrtol. It's free software (like in freedom not in free beer) and is available under MIT Lizenz at https://github.com/Bergiu/makebot."
 welcome_text="Welcome to the chatbot! Say hello to everyone! Made by {{author}}!" # Shown for new users
 stats_text="Chat info\nYour name: {{name}}\nCurrent room: {{room}}\nTotal users: {{users}}\nVersion {{version}}" #Statistic text
 name_text="Your new ID is {{name}}" # Shown for users renewing their identity
@@ -40,6 +42,8 @@ exit_text="Bye bye {{name}}! You can always come back by using /start" # Text sh
 def main():
     updater = Updater(token) # Updater, check python-telegram-bot docs
     dispatcher = updater.dispatcher # Dispatcher, check ptb docs
+    dispatcher.add_handler(CommandHandler('help', help)) # help command
+    dispatcher.add_handler(CommandHandler('license', license)) # license command
     dispatcher.add_handler(CommandHandler('start', start)) # define start command
     dispatcher.add_handler(CommandHandler('renew', renew)) # same for renew
     dispatcher.add_handler(CommandHandler('info', info)) # same for info
@@ -81,6 +85,14 @@ def log(message): # log a message to log file
     log_text=str(datetime.now()) + ": " + message +"\n"
     with open("log", "a") as f:
         f.write(log_text)
+
+# /help
+def help(bot, update):
+    queue(Thread(target=send, args=(bot, bot_name, send_text, 2, update.message.chat_id, help_text,))) # send help text
+
+# /license
+def license(bot, update):
+    queue(Thread(target=send, args=(bot, bot_name, send_text, 2, update.message.chat_id, license_text,))) # send license text
 
 # /start
 def start(bot, update):
