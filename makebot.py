@@ -10,6 +10,7 @@ from datetime import datetime
 import threading
 import sqlite3
 import animals
+import subprocess
 
 # Variables
 ids = []
@@ -36,7 +37,8 @@ welcome_text = "Welcome to the chatbot! Say hello to everyone! Made by {{author}
 stats_text = "Chat info\nYour name: {{name}}\nCurrent room: {{room}}\nTotal users: {{users}}\nVersion {{version}}"  # Statistic text
 name_text = "Your new ID is {{name}}"  # Shown for users renewing their identity
 room_text = "Rooms\nYou can join rooms using /join room\n{{rooms}}"  # Not implemented
-update_text = "Chatbot updated to version {{version}}\nUpdate notes:\n+Testing if code works with newest python-telegram-bot"  # Text shown when bot is run
+commit_msg = subprocess.check_output(['git', 'log', '-1', '--pretty=%B']).decode("utf-8")
+update_text = "Chatbot updated to version {{version}}\nUpdate notes:\n+" + commit_msg  # Text shown when bot is run
 unknown_text = "Unknown command!"  # Text shown when unknown command is typed
 exit_text = "Bye bye {{name}}! You can always come back by using /start"  # Text shown when /stop is used
 
