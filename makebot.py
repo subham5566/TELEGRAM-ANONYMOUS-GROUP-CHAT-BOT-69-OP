@@ -11,6 +11,7 @@ import threading
 import sqlite3
 import animals
 import subprocess
+import time
 
 # Variables
 ids = []
@@ -65,6 +66,7 @@ def main():
 # todo worker
 def process():
     while 1:  # forever
+        time.sleep(1)
         if len(todo) > 0:  # if there is jobs in todo list
             try:
                 todo[0].start()  # try to start a job
