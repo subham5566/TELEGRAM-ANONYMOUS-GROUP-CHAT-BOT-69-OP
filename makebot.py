@@ -33,7 +33,7 @@ with open("BUILD", "r") as f:
 version = "0.3_" + str(build)  # Version is version+build
 author = "Make"  # Author
 help_text = "Untergrund Chat @TheVillageChats Chat-Netzwerks.\n\nHier kannst du Anonym mit anderen schreiben.\n\n/help - Help\n/license - Shows the license\n/info - Information about your identity and the server\n/renew - Renews your identity\n/stop - Stops the bot"
-license_text = "The Bot is hosted by @GeloMyrtol. It's free software (like in freedom not in free beer) and is available under MIT Lizenz at https://github.com/Bergiu/makebot."
+license_text = "The Bot is hosted by @GeloMyrtol. It's free software (like in freedom not in free beer) and is available under MIT license at https://github.com/Bergiu/makebot."
 welcome_text = "Welcome to the chatbot! Say hello to everyone! Made by {{author}}!"  # Shown for new users
 stats_text = "Chat info\nYour name: {{name}}\nCurrent room: {{room}}\nTotal users: {{users}}\nVersion {{version}}"  # Statistic text
 name_text = "Your new ID is {{name}}"  # Shown for users renewing their identity
