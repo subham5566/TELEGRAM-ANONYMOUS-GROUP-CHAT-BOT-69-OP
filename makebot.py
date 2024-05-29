@@ -15,7 +15,7 @@ import telegram
 
 # Variables
 ids = []
-token = "7128317228:AAFGV6mxwKIkvGlDSb7kKswfhW9Io2YvfKo"  # Bot token here
+token = ""  # Bot token here
 token = open("./config.sh").read().split("\n")[0]
 print(token)
 if not token:
