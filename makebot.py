@@ -15,7 +15,7 @@ import time
 
 # Variables
 ids = []
-token = ""  # Bot token here
+token = "BOT_TOKEN"  # Bot token here
 token = open("TOKEN").read().split("\n")[0]
 print(token)
 if not token:
