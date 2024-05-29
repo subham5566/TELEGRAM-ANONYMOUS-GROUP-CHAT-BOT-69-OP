@@ -15,8 +15,8 @@ import telegram
 
 # Variables
 ids = []
-token = ""  # Bot token here
-token = open("TOKEN").read().split("\n")[0]
+token = "7128317228:AAFGV6mxwKIkvGlDSb7kKswfhW9Io2YvfKo"  # Bot token here
+token = open("").read().split("\n")[0]
 print(token)
 if not token:
     raise ValueError('please add token')
