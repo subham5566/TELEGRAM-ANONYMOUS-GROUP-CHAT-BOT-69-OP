@@ -4,7 +4,6 @@
 #
 
 # Imports
-from telegram import Updater, CommandHandler, MessageHandler  # python-telegram-bot
 from threading import Thread
 from datetime import datetime
 import threading
