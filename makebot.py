@@ -46,7 +46,7 @@ exit_text = "Bye bye {{name}}! You can always come back by using /start"  # Text
 
 # main
 def main():
-    updater = Updater(token)  # Updater, check python-telegram-bot docs
+    updater = updater(token)  # Updater, check python-telegram-bot docs
     dispatcher = updater.dispatcher  # Dispatcher, check ptb docs
     dispatcher.add_handler(CommandHandler('help', help))  # help command
     dispatcher.add_handler(CommandHandler('license', license))  # license command
