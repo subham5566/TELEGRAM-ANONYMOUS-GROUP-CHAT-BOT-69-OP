@@ -14,8 +14,8 @@ import time
 
 # Variables
 ids = []
-token = "TOKEN"  # Bot token here
-token = open("TOKEN").read().split("\n")[0]
+token = "7128317228:AAGBMHofNvsPDeSDr4dKX4cNNNsh44nV6m4"  # Bot token here
+token = open("7128317228:AAGBMHofNvsPDeSDr4dKX4cNNNsh44nV6m4").read().split("\n")[0]
 print(token)
 if not token:
     raise ValueError('please add token')
